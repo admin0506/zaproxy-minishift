@@ -1,7 +1,5 @@
-# This dockerfile builds the zap stable release
-# Modified to run with minishift
 FROM ubuntu:16.04
-MAINTAINER Simon Bennetts "psiinon@gmail.com"
+MAINTAINER Dave van Stein <dvanstein@xebia.com>
 
 RUN apt-get update && apt-get install -q -y --fix-missing \
 	make \
@@ -20,7 +18,7 @@ RUN apt-get update && apt-get install -q -y --fix-missing \
 	net-tools \
 	ruby-dev \
 	python-pip \
-	xvfb \
+	xvfb && \
 	apt-get clean && \
 	rm -rf /var/lib/apt/lists/*
 
